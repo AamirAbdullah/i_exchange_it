@@ -466,6 +466,7 @@ class _SearchWidgetState extends StateMVC<SearchWidget> {
   }
 
   // void _updateStatus(loc.PermissionStatus status) async {
+  // ignore: unused_element
   void _updateStatus(LocationPermission status) async {
     if (_status != status) {
       setState(() {

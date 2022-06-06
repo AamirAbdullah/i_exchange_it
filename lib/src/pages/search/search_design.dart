@@ -1,7 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iExchange_it/src/models/category2.dart';
-import 'package:iExchange_it/src/models/images.dart';
+
 
 class SearchDesign extends StatefulWidget {
   final CategorySearch? categorySearch;
@@ -21,8 +21,8 @@ class _SearchDesignState extends State<SearchDesign> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var textTheme = theme.textTheme;
-    var size = MediaQuery.of(context).size;
-    final double statusBarHeight = MediaQuery.of(context).padding.top;
+    
+    
     return Container(
       margin: EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Column(

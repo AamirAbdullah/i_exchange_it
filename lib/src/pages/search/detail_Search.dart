@@ -2,13 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:iExchange_it/src/controller/search_controller.dart';
-import 'package:iExchange_it/src/elements/home_grid_widget_item.dart';
 import 'package:iExchange_it/src/elements/search/searchSortBottomFeild.dart';
 import 'package:iExchange_it/src/elements/search/search_filter_bottom_sheet.dart';
-import 'package:iExchange_it/src/elements/shimmer/grid_product_shimmer_list.dart';
 import 'package:iExchange_it/src/models/category.dart';
 import 'package:iExchange_it/src/models/category2.dart';
-import 'package:iExchange_it/src/models/product.dart';
 import 'package:iExchange_it/src/models/route_argument.dart';
 import 'package:iExchange_it/src/pages/search/search_design.dart';
 import 'package:iExchange_it/src/repository/search_repository.dart';
@@ -26,6 +23,7 @@ class DetailSearch extends StatefulWidget {
   @override
   _DetailSearchState createState() => _DetailSearchState();
 }
+
 List<CategorySearch> categorys = [];
 
 class _DetailSearchState extends StateMVC<DetailSearch> {
@@ -50,7 +48,6 @@ class _DetailSearchState extends StateMVC<DetailSearch> {
 
     super.initState();
     _con!.overlayState = Overlay.of(context);
-     
 
     // location.hasPermission()
     //     .then(_updateStatus);
@@ -64,11 +61,7 @@ class _DetailSearchState extends StateMVC<DetailSearch> {
     var size = MediaQuery.of(context).size;
     final double statusBarHeight = MediaQuery.of(context).padding.top;
 
-    bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
-    final double itemWidth = (size.width / 2);
-    final double landscapeItemWidth = (size.width / 3);
-
+  
 
     return WillPopScope(
         onWillPop: () async {
@@ -300,70 +293,68 @@ class _DetailSearchState extends StateMVC<DetailSearch> {
                         ],
                       ),
                     ),
-                // Container(
-                //     height: (size.height - statusBarHeight - 55 - 50),
-                //     child: SingleChildScrollView(
-                //       child: Column(
-                //         children: [
-                //           _con!.isSearching
-                //               ? GridProductShimmerList()
-                //               : _con!.searchComplete &&
-                //                       _con!.searchedProducts.isEmpty
-                //                   ? Container(
-                //                       height: 100,
-                //                       child: Center(
-                //                         child: Text(
-                //                           "No results found...",
-                //                           style: textTheme.caption,
-                //                         ),
-                //                       ),
-                //                     ):
-                //                    Padding(
-                //                       padding: const EdgeInsets.symmetric(
-                //                           horizontal: 5),
-                //                       child: GridView.count(
-                //                         childAspectRatio: isPortrait
-                //                             ? (itemWidth / 251)
-                //                             : (landscapeItemWidth / 251),
-                //                         crossAxisCount: isPortrait ? 2 : 3,
-                //                         primary: false,
-                //                         shrinkWrap: true,
-                //                         padding:
-                //                             EdgeInsets.symmetric(vertical: 10),
-                //                         children: List.generate(
-                //                             _con!.searchedProducts.length,
-                //                             (index) {
-                //                           Product product =
-                //                               _con!.searchedProducts[index];
-                //                           return HomeGridWidgetItem(
-                //                             product: product,
-                //                             onTap: () {
-                //                               Navigator.of(context).pushNamed(
-                //                                   "/ItemDetails",
-                //                                   arguments: RouteArgument(
-                //                                       product: product));
-                //                             },
-                //                             onFav: () {},
-                //                           );
-                //                         }),
-                //                       ),
-                //                     ),
-                //
-                //         ],
-                //       ),
-                //     ),
-                //   ),
+                    // Container(
+                    //     height: (size.height - statusBarHeight - 55 - 50),
+                    //     child: SingleChildScrollView(
+                    //       child: Column(
+                    //         children: [
+                    //           _con!.isSearching
+                    //               ? GridProductShimmerList()
+                    //               : _con!.searchComplete &&
+                    //                       _con!.searchedProducts.isEmpty
+                    //                   ? Container(
+                    //                       height: 100,
+                    //                       child: Center(
+                    //                         child: Text(
+                    //                           "No results found...",
+                    //                           style: textTheme.caption,
+                    //                         ),
+                    //                       ),
+                    //                     ):
+                    //                    Padding(
+                    //                       padding: const EdgeInsets.symmetric(
+                    //                           horizontal: 5),
+                    //                       child: GridView.count(
+                    //                         childAspectRatio: isPortrait
+                    //                             ? (itemWidth / 251)
+                    //                             : (landscapeItemWidth / 251),
+                    //                         crossAxisCount: isPortrait ? 2 : 3,
+                    //                         primary: false,
+                    //                         shrinkWrap: true,
+                    //                         padding:
+                    //                             EdgeInsets.symmetric(vertical: 10),
+                    //                         children: List.generate(
+                    //                             _con!.searchedProducts.length,
+                    //                             (index) {
+                    //                           Product product =
+                    //                               _con!.searchedProducts[index];
+                    //                           return HomeGridWidgetItem(
+                    //                             product: product,
+                    //                             onTap: () {
+                    //                               Navigator.of(context).pushNamed(
+                    //                                   "/ItemDetails",
+                    //                                   arguments: RouteArgument(
+                    //                                       product: product));
+                    //                             },
+                    //                             onFav: () {},
+                    //                           );
+                    //                         }),
+                    //                       ),
+                    //                     ),
+                    //
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ),
 
                     ListView.builder(
                         primary: false,
                         shrinkWrap: true,
                         itemCount: categorys.length,
-                        itemBuilder: (BuildContext context, int index)
-                        =>SearchDesign(categorySearch:categorys[index],
-                        )),
-
-
-
+                        itemBuilder: (BuildContext context, int index) =>
+                            SearchDesign(
+                              categorySearch: categorys[index],
+                            )),
                   ],
                 ),
               ),
@@ -538,7 +529,6 @@ class _DetailSearchState extends StateMVC<DetailSearch> {
       }
     }
   }
-
 }
 
 Column container({category, context, ontap}) {

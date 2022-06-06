@@ -134,6 +134,7 @@ class UserController extends ControllerMVC {
       });
       try {
         final AuthCredential facebookCredential = FacebookAuthProvider.credential(result.accessToken!.token);
+        // ignore: unused_local_variable
         final userCredential = await FirebaseAuth.instance.signInWithCredential(facebookCredential);
 
       }catch(e)
