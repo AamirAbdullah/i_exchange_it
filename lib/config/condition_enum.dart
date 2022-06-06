@@ -1,0 +1,3 @@
+enum ConditionEnum {
+  newCondition, used
+}
