@@ -68,7 +68,7 @@ class ReviewController extends ControllerMVC {
           this.isLoading = false;
         });
         // ignore: deprecated_member_use
-        scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+        // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
       });
     }
     else {
@@ -91,13 +91,13 @@ class ReviewController extends ControllerMVC {
         }
       } else {
         // ignore: deprecated_member_use
-        scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Some Error Occurred, Try later please")));
+        // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Some Error Occurred, Try later please")));
       }
     }, onError: (e) {
       setState((){this.isLoading = false;});
       print(e);
       // ignore: deprecated_member_use
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
     });
   }
 

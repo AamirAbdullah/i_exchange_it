@@ -97,8 +97,8 @@ class AddProductController extends ControllerMVC {
       NewProduct _prod = this.newProd;
 
       if (_prod.mediaList == null || _prod.mediaList!.isEmpty) {
-        scaffoldKey!.currentState!
-            .showSnackBar(SnackBar(content: Text("Select item images")));
+        // scaffoldKey!.currentState!
+        //     .showSnackBar(SnackBar(content: Text("Select item images")));
       } else if (_prod.type == null) {
         ///Select Type first
         showToast("Please select type");
@@ -157,9 +157,9 @@ class AddProductController extends ControllerMVC {
           setState(() {
             isLoading = false;
           });
-          scaffoldKey!.currentState!.showSnackBar(SnackBar(
-            content: Text("Error uploading item"),
-          ));
+          // scaffoldKey!.currentState!.showSnackBar(SnackBar(
+          //   content: Text("Error uploading item"),
+          // ));
         }, onDone: () {
           if (isUploaded) {
             showToast("Item uploaded successfully");

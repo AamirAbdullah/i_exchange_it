@@ -41,9 +41,9 @@ class UserController extends ControllerMVC {
               .pushNamedAndRemoveUntil("/Pages", (route) => false,
                   arguments: 0);
         } else {
-          scaffoldKey!.currentState!
-              // ignore: deprecated_member_use
-              .showSnackBar(SnackBar(content: Text("Wrong email or password")));
+          // scaffoldKey!.currentState!
+          //     // ignore: deprecated_member_use
+          //     .showSnackBar(SnackBar(content: Text("Wrong email or password")));
         }
       }, onError: (e) {
         print(e);
@@ -51,8 +51,8 @@ class UserController extends ControllerMVC {
           isLoading = false;
         });
         // ignore: deprecated_member_use
-        scaffoldKey!.currentState!.showSnackBar(
-            SnackBar(content: Text("Verify your internet connection")));
+        // scaffoldKey!.currentState!.showSnackBar(
+        //     SnackBar(content: Text("Verify your internet connection")));
       });
     }
   }
@@ -72,9 +72,9 @@ class UserController extends ControllerMVC {
               .pushNamedAndRemoveUntil("/Pages", (route) => false,
                   arguments: 0);
         } else {
-          scaffoldKey!.currentState!
-              // ignore: deprecated_member_use
-              .showSnackBar(SnackBar(content: Text("Wrong email or password")));
+          // scaffoldKey!.currentState!
+          //     // ignore: deprecated_member_use
+          //     .showSnackBar(SnackBar(content: Text("Wrong email or password")));
         }
       }, onError: (e) {
         print(e);
@@ -82,8 +82,8 @@ class UserController extends ControllerMVC {
           isLoading = false;
         });
         // ignore: deprecated_member_use
-        scaffoldKey!.currentState!.showSnackBar(
-            SnackBar(content: Text("Verify your internet connection")));
+        // scaffoldKey!.currentState!.showSnackBar(
+        //     SnackBar(content: Text("Verify your internet connection")));
       });
     }
   }
@@ -116,9 +116,9 @@ class UserController extends ControllerMVC {
 
       userRepo.socialLogin(_facebookuser, 'facebook').then((_user) {
         if (_user.alreadyExists) {
-          scaffoldKey!.currentState!
-          // ignore: deprecated_member_use
-              .showSnackBar(SnackBar(content: Text("Email already registered")));
+          // scaffoldKey!.currentState!
+          // // ignore: deprecated_member_use
+          //     .showSnackBar(SnackBar(content: Text("Email already registered")));
         } else {
           if (_user.apiToken != null && _user.apiToken.toString().length > 0) {
             Navigator.push(
@@ -126,9 +126,9 @@ class UserController extends ControllerMVC {
               MaterialPageRoute(builder: (context) => PagesWidget()),
             );
           } else {
-            scaffoldKey!.currentState!
-            // ignore: deprecated_member_use
-                .showSnackBar(SnackBar(content: Text("Wrong email or password")));
+            // scaffoldKey!.currentState!
+            // // ignore: deprecated_member_use
+            //     .showSnackBar(SnackBar(content: Text("Wrong email or password")));
           }
         }
       });
@@ -223,18 +223,18 @@ class UserController extends ControllerMVC {
         isLoading = false;
       });
       if (_user.alreadyExists) {
-        scaffoldKey!.currentState!
-            // ignore: deprecated_member_use
-            .showSnackBar(SnackBar(content: Text("Email already registered")));
+        // scaffoldKey!.currentState!
+        //     // ignore: deprecated_member_use
+        //     .showSnackBar(SnackBar(content: Text("Email already registered")));
       } else {
         if (_user.apiToken != null && _user.apiToken.toString().length > 0) {
           Navigator.of(this.scaffoldKey!.currentContext!)
               .pushNamedAndRemoveUntil("/Pages", (route) => false,
                   arguments: 0);
         } else {
-          scaffoldKey!.currentState!
-              // ignore: deprecated_member_use
-              .showSnackBar(SnackBar(content: Text("Wrong email or password")));
+          // scaffoldKey!.currentState!
+          //     // ignore: deprecated_member_use
+          //     .showSnackBar(SnackBar(content: Text("Wrong email or password")));
         }
       }
     }, onError: (e) {
@@ -242,9 +242,9 @@ class UserController extends ControllerMVC {
       setState(() {
         isLoading = false;
       });
-      // ignore: deprecated_member_use
-      scaffoldKey!.currentState!.showSnackBar(
-          SnackBar(content: Text("Verify your internet connection")));
+      // // ignore: deprecated_member_use
+      // scaffoldKey!.currentState!.showSnackBar(
+      //     SnackBar(content: Text("Verify your internet connection")));
     });
   }
 
@@ -283,9 +283,9 @@ class GoogleSignInController extends ChangeNotifier {
 
     userRepo.socialLogin(_googleUser, 'google').then((_user) {
       if (_user.alreadyExists) {
-        scaffoldKey!.currentState!
-            // ignore: deprecated_member_use
-            .showSnackBar(SnackBar(content: Text("Email already registered")));
+        // scaffoldKey!.currentState!
+        //     // ignore: deprecated_member_use
+        //     .showSnackBar(SnackBar(content: Text("Email already registered")));
       } else {
         if (_user.apiToken != null && _user.apiToken.toString().length > 0) {
           Navigator.push(
@@ -293,17 +293,17 @@ class GoogleSignInController extends ChangeNotifier {
             MaterialPageRoute(builder: (context) => PagesWidget()),
           );
         } else {
-          scaffoldKey!.currentState!
-              // ignore: deprecated_member_use
-              .showSnackBar(SnackBar(content: Text("Wrong email or password")));
+          // scaffoldKey!.currentState!
+          //     // ignore: deprecated_member_use
+          //     .showSnackBar(SnackBar(content: Text("Wrong email or password")));
         }
       }
     }, onError: (e) {
       print(e);
 
       // ignore: deprecated_member_use
-      scaffoldKey!.currentState!.showSnackBar(
-          SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(
+      //     SnackBar(content: Text("Verify your internet connection")));
     });
   }
 }

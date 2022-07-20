@@ -289,7 +289,7 @@ class _ViewItemDetailsState extends StateMVC<ViewItemDetails> {
                                       ),
                                       _con!.isMine || endBidding
                                           ? SizedBox(width: 10)
-                                          : RaisedButton(
+                                          : MaterialButton(
                                         onPressed:(){
                                           Navigator.of(context).pushNamed("/PlaceBid",
                                               arguments: RouteArgument(product: _con!.product)

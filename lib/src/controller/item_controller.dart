@@ -62,7 +62,7 @@ class ItemController extends ControllerMVC {
         onError: (e){
       print(e);
       setState((){isLoadingProducts = false; });
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Varify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Varify your internet connection")));
         },
         onDone: (){
           setState((){isLoadingProducts = false; });
@@ -78,7 +78,7 @@ class ItemController extends ControllerMVC {
     },
         onError: (e){
       print(e);
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
         },
         onDone: (){
       if(this.product!.latitude != null && this.product!.longitude != null) {
@@ -135,7 +135,7 @@ class ItemController extends ControllerMVC {
       }
     }, onError: (e){
       print(e);
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
     });
   }
 
@@ -165,12 +165,12 @@ class ItemController extends ControllerMVC {
           }
         }
       } else {
-        scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Some Error Occurred, Try later please")));
+        // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Some Error Occurred, Try later please")));
       }
     }, onError: (e) {
       setState((){this.isLoading = false;});
       print(e);
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
     });
   }
 

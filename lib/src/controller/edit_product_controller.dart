@@ -140,7 +140,7 @@ class EditProductController extends ControllerMVC {
             onError: (e){
               setState((){ isLoading = false; });
               print(e);
-              scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+              // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
             });
       }
     }

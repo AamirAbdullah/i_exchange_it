@@ -1544,7 +1544,7 @@ class _EditProductWidgetState extends StateMVC<EditProductWidget> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     // ignore: deprecated_member_use
-                    child: RaisedButton(
+                    child: MaterialButton(
                       onPressed: (){
                         SystemChannels.textInput.invokeMethod('TextInput.hide');
                         FocusScope.of(context).requestFocus(new FocusNode());

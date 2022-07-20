@@ -81,7 +81,7 @@ class ProfileController extends ControllerMVC {
     
     } else {
       
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Name must be at least 3 characters long.")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Name must be at least 3 characters long.")));
     }
   }
 
@@ -91,7 +91,7 @@ class ProfileController extends ControllerMVC {
       editedUser.phone = phoneController!.text;
       updateUserProfile(editedUser);
     } else {
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Invalid Phone")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Invalid Phone")));
     }
   }
 
@@ -101,7 +101,7 @@ class ProfileController extends ControllerMVC {
       editedUser.address = addressController!.text;
       updateUserProfile(editedUser);
     } else {
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Invalid Address")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Invalid Address")));
     }
   }
 
@@ -129,12 +129,12 @@ class ProfileController extends ControllerMVC {
         isLoading = false;
       });
       print(e);
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
     }, onDone: (){
       setState((){
         isLoading = false;
       });
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Details updated")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Details updated")));
     }
     );
   }

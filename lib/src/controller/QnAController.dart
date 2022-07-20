@@ -72,8 +72,8 @@ class QnAController extends ControllerMVC {
           this.isLoading = false;
         });
         // ignore: deprecated_member_use
-        scaffoldKey!.currentState!.showSnackBar(
-            SnackBar(content: Text("Verify your internet connection")));
+        // scaffoldKey!.currentState!.showSnackBar(
+        //     SnackBar(content: Text("Verify your internet connection")));
       });
     }
   }

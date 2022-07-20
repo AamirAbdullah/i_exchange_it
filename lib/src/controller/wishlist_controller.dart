@@ -73,7 +73,7 @@ class WishlistController extends ControllerMVC {
       print(e);
       setState((){isLoading = false;});
       
-      scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
+      // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Verify your internet connection")));
         },
         onDone: (){
           setState((){isLoading = false;});
@@ -159,7 +159,7 @@ class WishlistController extends ControllerMVC {
             onError: (e){
           print(e);
           setState((){ isLoading = false; });
-          scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Error adding Item to Wishlist"),));
+          // scaffoldKey!.currentState!.showSnackBar(SnackBar(content: Text("Error adding Item to Wishlist"),));
             });
       }
     }
